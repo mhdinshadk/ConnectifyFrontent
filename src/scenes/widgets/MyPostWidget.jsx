@@ -46,7 +46,7 @@ import {
 		formData.append("picturePath", image.name);
 	  }
   
-	  const response = await fetch(`https://connectify-emnz.onrender.com/posts`, {
+	  const response = await fetch(`http://localhost:5000/posts`, {
 		method: "POST",
 		headers: { Authorization: `Bearer ${token}` },
 		body: formData,
@@ -158,12 +158,15 @@ import {
 			disabled={!post}
 			onClick={handlePost}
 			sx={{
-				color: palette.common.black, // Use palette's black color if defined
+				color: palette.common.black, 
 				backgroundColor: palette.primary.main,
-			  borderRadius: "3rem",
+			    borderRadius: "3rem",
+				
 			}}
 		  >
-			POST
+			<span style={{ color: "black", fontWeight: 600 }}>
+    POST
+  </span>
 		  </Button>
 		</FlexBetween>
 	  </WidgetWrapper>

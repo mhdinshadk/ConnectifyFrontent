@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`https://connectify-emnz.onrender.com/assets/${image}`}
+        src={`http://localhost:5000/assets/${image}`}
       />
     </Box>
   );
