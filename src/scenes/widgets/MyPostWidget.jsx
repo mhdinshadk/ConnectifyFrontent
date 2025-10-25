@@ -46,7 +46,7 @@ import {
 		formData.append("picturePath", image.name);
 	  }
   
-	  const response = await fetch(`https://connectify-backend-gilt.vercel.app/posts`, {
+	  const response = await fetch(`https://connectify-backend-one.vercel.app/posts`, {
 		method: "POST",
 		headers: { Authorization: `Bearer ${token}` },
 		body: formData,

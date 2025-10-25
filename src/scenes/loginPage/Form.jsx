@@ -62,13 +62,21 @@ const Form = () => {
     }
     formData.append("picturePath", values.picture.name);
 
+    // const savedUserResponse = await fetch(
+    //   "https://connectify-backend-gilt.vercel.app/auth/register",
+    //   {
+    //     method: "POST",
+    //     body: formData,
+    //   }
+    // );
     const savedUserResponse = await fetch(
-      "https://connectify-backend-gilt.vercel.app/auth/register",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
+  "https://connectify-backend-one.vercel.app/auth/register",
+  {
+    method: "POST",
+    body: formData,
+  }
+);
+
     const savedUser = await savedUserResponse.json();
     onSubmitProps.resetForm();
 
@@ -78,11 +86,17 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("https://connectify-backend-gilt.vercel.app/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
+    // const loggedInResponse = await fetch("https://connectify-backend-gilt.vercel.app/auth/login", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(values),
+    // });
+    const loggedInResponse = await fetch("https://connectify-backend-one.vercel.app/auth/login", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(values),
+});
+
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();
     if (loggedIn) {
